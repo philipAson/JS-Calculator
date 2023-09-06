@@ -19,7 +19,7 @@
     font-size: 1.5em;
 }
 
-.button {
+.button, .calc_sign {
     display: inline-block;
     background-color: blanchedalmond;
     width: 20px;
@@ -46,10 +46,10 @@
     margin-top: 15px;
 }
 
-.button:hover {
+.button:hover, .calc_sign:hover {
     background-color: rgb(234, 206, 164);
 }
-.button:active {
+.button:active, .calc_sign:active {
     transform: translate(2px, 2px, 0px);
     box-shadow: 2, 2, 0;
 }

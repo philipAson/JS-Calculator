@@ -48,7 +48,7 @@ const display = (value) => {
 }
 
 const calculate = () => {
-    // let res = eval(result.innerText); // Använd ej!
-    let res = result.innerText.slice
+    let res = eval(result.innerText); // Använd ej!
+    // let res = result.innerText.slice
     display(" = " + res)
 }
