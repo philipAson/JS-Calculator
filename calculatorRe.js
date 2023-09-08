@@ -21,7 +21,7 @@ let val2 = null;
 for (const buttonElement of buttonElements) {
     buttonElement.addEventListener("click", () => {
 
-        console.log("click " + buttonElement.innerHTML)
+        console.log("click " + buttonElement.innerHTML);
         buttonListener(buttonElement);
     })
 }
@@ -29,7 +29,7 @@ for (const buttonElement of buttonElements) {
 for (const operatorElement of arithmeticOperatorElements) {
     operatorElement.addEventListener("click", () => {
 
-        console.log("click" + operatorElement.innerHTML)
+        console.log("click" + operatorElement.innerHTML);
         arithmeticOperatorListener(operatorElement);
     })
 }
@@ -38,8 +38,9 @@ const arithmeticOperatorListener = (operatorButton) => {
     if (val1 == null) {
 
         val1 = parseFloat(result.innerText); 
+        operatorInBuffer = operatorButton.innerText
         clearResult();
-        console.log(val1)
+        console.log(val1);
 
     } else {
         
@@ -47,12 +48,12 @@ const arithmeticOperatorListener = (operatorButton) => {
 
         switch (operatorButton.innerText) {
             case "+":
-
+            
                 hotLoad = true;
                 val1 = parseFloat(calculate(val1, operatorInBuffer, val2));
                 operatorInBuffer = "+";
 
-                result.innerText = val1
+                result.innerText = val1;
 
                 break;
             case "-":
@@ -61,7 +62,7 @@ const arithmeticOperatorListener = (operatorButton) => {
                 val1 = parseFloat(calculate(val1, operatorInBuffer, val2));
                 operatorInBuffer = "-";
 
-                result.innerText = val1
+                result.innerText = val1;
                 
                 break;
             case "*":
@@ -70,7 +71,7 @@ const arithmeticOperatorListener = (operatorButton) => {
                 val1 = parseFloat(calculate(val1, operatorInBuffer, val2));
                 operatorInBuffer = "*";
 
-                result.innerText = val1
+                result.innerText = val1;
             
                 break;
             case "/":
@@ -79,9 +80,16 @@ const arithmeticOperatorListener = (operatorButton) => {
                 val1 = parseFloat(calculate(val1, operatorInBuffer, val2));
                 operatorInBuffer = "/";
 
-                result.innerText = val1
-                
+                result.innerText = val1;
+
                 break;  
+
+            case "=":
+
+                val1 = parseFloat(calculate(val1, operatorInBuffer, val2));
+                result.innerText = val1;
+
+                break;
             default:
                 result.innerText = "Error: Invalid operator";
         }
@@ -92,13 +100,13 @@ const buttonListener = (button) => {
     if(button.innerText == "=") {
         val2 = parseFloat(result.innerText);
         let equals = calculate(val1, operatorInBuffer, val2);
-        result.innerText(equals)
+        result.innerText(equals);
     } else if (button.innerText == "AC"){
         acResetDisplay();
     } else if (hotLoad == true){
         clearResult();
         hotLoad = false;
-        console.log(operatorInBuffer)
+        console.log(operatorInBuffer);
         display(button.innerText);
     } else {
         // mem = button.innerText
@@ -116,8 +124,8 @@ const acResetDisplay = () => {
     val2 = null;
     val1 = null;
     hotLoad = false;
-    console.log(val1)
-    console.log(val2)
+    console.log(val1);
+    console.log(val2);
     result.innerText = "0";
     firstInput = true;
 }
