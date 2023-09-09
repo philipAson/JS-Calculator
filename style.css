@@ -7,10 +7,11 @@
     box-shadow: 5px 2px 10px gray;
 }
 
-#result {
+#display {
     background-color: bisque;
     display: block;
     width: auto;
+    height: 20px;
     padding: 10px;
     border: black solid 1px;
     border-radius: 5px;
@@ -19,7 +20,7 @@
     font-size: 1.5em;
 }
 
-.button, .calc_sign {
+.button, .calc_sign, .calc_number {
     display: inline-block;
     background-color: blanchedalmond;
     width: 20px;
